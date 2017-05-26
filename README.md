@@ -18,6 +18,11 @@ It is just a PoC - so it will blow up on you, but a simple example might be to c
 ./plurality run  echo_test echo "this is a test wahoo"
 ```
 
+The smoke and mirrors part of this PoC is that it uses sudo and tar to unpack the exported images from the Docker image client API.  This is because root is required to create make nodes.
+
+All containers are stored in ${HOME}/.runc .
+
+
 ## Install
 
 To install, use `go get`:
