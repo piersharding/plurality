@@ -23,8 +23,21 @@ It is just a PoC - so it will blow up on you, but a simple example might be to c
 To install, use `go get`:
 
 ```bash
+# no sophisticated packaging and dependency resolution here
+# install vndr from https://github.com/LK4D4/vndr
+$ go get github.com/LK4D4/vndr
 $ go get -d github.com/piersharding/plurality
+$ cd ${GOPATH}/src/github.com/piersharding/plurality
+# sort out the dependencies
+$ vndr
+# now build
+$ go build .
 ```
+
+or just simply do:
+```bash
+$ make
+``
 
 ## Contribution
 
