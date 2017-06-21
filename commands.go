@@ -16,6 +16,12 @@ var GlobalFlags = []cli.Flag{
 
 		Usage: "",
 	},
+    cli.BoolFlag{
+        EnvVar: "ENV_NOSUDO",
+        Name:   "nosudo",
+
+        Usage: "",
+    },
 	cli.StringFlag{
 		EnvVar: "ENV_ERRLEVEL",
 		Name:   "errlevel",

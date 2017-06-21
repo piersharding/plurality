@@ -121,7 +121,7 @@ func CmdCreate(c *cli.Context) error {
     containerConfig := &container.Config{
         Image: image,
         Hostname: prefix+cname,
-        Cmd:   []string{"true"},
+        // Cmd:   []string{"true"}, // hopefully not required!
     }
     log.Info("Creating container: ", prefix+cname)
     resp, err := dcli.ContainerCreate(context.Background(), containerConfig, nil, nil, prefix+cname)
@@ -163,8 +163,13 @@ func CmdCreate(c *cli.Context) error {
     _ = os.MkdirAll(target+"/rootfs", os.ModePerm)
 
     // untar the file
-    // untar(archivename, target+"/rootfs")
-    extractTar(archivename, target+"/rootfs")
+    if c.GlobalBool("nosudo") {
+        log.Debug("We are NOT using sudo to untar container: ", archivename)
+        untar(archivename, target+"/rootfs")
+    } else {
+        extractTar(archivename, target+"/rootfs")
+    }
+
 
     // generate spec file
     rout, err := exec.Command(runc, "--root", container_run, "spec", "--rootless", "--bundle", target).Output()
