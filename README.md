@@ -42,7 +42,7 @@ $ go build .
 or just simply do:
 ```bash
 $ make
-``
+```
 
 ## Contribution
 
