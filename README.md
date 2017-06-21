@@ -91,7 +91,6 @@ Successfully tagged echo-server:latest
 2017/06/22 09:11:40 09:11:40.400 CmdCreate ▶ INFO 007 Creating container:  tmp-echo_test
 2017/06/22 09:11:40 09:11:40.484 CmdCreate ▶ INFO 008 Running container:  tmp-echo_test
 2017/06/22 09:11:40 09:11:40.806 CmdCreate ▶ INFO 009 Logs for container:  tmp-echo_test
-Listening on :3333
 2017/06/22 09:11:40 09:11:40.845 CmdCreate ▶ INFO 00a Exporting container:  tmp-echo_test
 2017/06/22 09:11:40 09:11:40.847 CmdCreate ▶ DEBU 00b Writing container:  tmp-echo_test  to:  /tmp/tmp-echo_test.tar
 2017/06/22 09:11:41 09:11:41.177 CmdCreate ▶ DEBU 00c We are NOT using sudo to untar container:  /tmp/tmp-echo_test.tar
